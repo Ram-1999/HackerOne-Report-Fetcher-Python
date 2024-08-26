@@ -50,16 +50,9 @@ while j < 20000000:
     # Send POST request with GraphQL query
     response = requests.post(graphql_endpoint, json=graphql_query)
 
-    # Print response status code
-   # print(f"Response Status Code: {response.status_code}")
-
     # If status code is 200, process the response
     if response.status_code == 200:
         data = response.json()
-
-        # Print response content for debugging
-        # print("Response Content:")
-        # print(json.dumps(data, indent=2))  # Print formatted JSON for readability
 
         # Extract and print URLs from the response
         if "data" in data and "search" in data["data"]:
